@@ -14,17 +14,23 @@ int main () {
 	map<string,int> my_m;
 	int pos=0;
 	string cuvant;
-	ifstream my_file ("input");
-	while (!my_file.eof()){
-		my_file >> cuvant;
+	/* Citim din baza de date cuvintele 
+		Merge doar pe un fisier simplu
+	*/
+
+	ifstream database ("input");
+	while (!database.eof()){
+		database >> cuvant;
 		my_m.insert (std::pair<string,int>(cuvant,pos));
 		pos++;
 	}
-cout << "Size : "  <<my_m.size() <<endl;
-map<string,int>::const_iterator it;
-for (it=my_m.begin(); it!=my_m.end(); it++){
-	cout << it->first << ":" << it->second << "\n";
-}
+	/* Afisam dimensiunea pt debug */
+	cout << "Size : "  <<my_m.size() <<endl;
+	/*Printam map-ul utilizand un iterator*/
+	map<string,int>::const_iterator it;
+	for (it=my_m.begin(); it!=my_m.end(); it++){
+		cout << it->first << ":" << it->second << "\n";
+	}
 
 return 0;
 }
