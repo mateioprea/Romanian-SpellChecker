@@ -4,7 +4,7 @@
 #include <fstream>
 #include <stdlib.h>
 #include <string>
-
+#include "binary_search.h"
 using namespace std;
 
 int main () {
@@ -31,6 +31,10 @@ int main () {
 	for (it=my_m.begin(); it!=my_m.end(); it++){
 		cout << it->first << ":" << it->second << "\n";
 	}
+    /*TODO:
+     * write a binarysearch function
+     * AI for the spell checker
+     */
 
 return 0;
 }
